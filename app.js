@@ -37,8 +37,8 @@ const translations = {
     'statement.strong': 'Reliable. Competent. Personal.',
     'contact.eyebrow': 'Contact', 'contact.title': 'Let us simplify your IT.',
     'contact.text': 'Send a message for an initial conversation about Microsoft 365, Azure, security or AI solutions for your organisation.',
-    'contact.addressLabel': 'Address:', 'contact.emailLabel': 'Email:', 'contact.websiteLabel': 'Website:',
-    'contact.note': 'Replace the email and phone number with your preferred business contact before publishing.',
+    'contact.addressLabel': 'Address:', 'contact.emailLabel': 'Business email', 'contact.emailValue': 'Contact us by email', 'contact.websiteLabel': 'Website:',
+    'contact.note': 'Initial consultations by email. Responses usually within 1–2 business days.',
     'footer.rights': 'All rights reserved.'
   },
   de: {
@@ -72,8 +72,8 @@ const translations = {
     'statement.strong': 'Zuverlässig. Kompetent. Persönlich.',
     'contact.eyebrow': 'Kontakt', 'contact.title': 'Lassen Sie uns Ihre IT vereinfachen.',
     'contact.text': 'Senden Sie eine Nachricht für ein erstes Gespräch über Microsoft 365, Azure, Sicherheit oder KI-Lösungen für Ihre Organisation.',
-    'contact.addressLabel': 'Adresse:', 'contact.emailLabel': 'E-Mail:', 'contact.websiteLabel': 'Website:',
-    'contact.note': 'Ersetzen Sie E-Mail und Telefonnummer vor der Veröffentlichung durch Ihre bevorzugten Geschäftskontaktdaten.',
+    'contact.addressLabel': 'Adresse:', 'contact.emailLabel': 'Geschäftliche Anfrage', 'contact.emailValue': 'E-Mail schreiben', 'contact.websiteLabel': 'Website:',
+    'contact.note': 'Erstgespräche per E-Mail. Antworten in der Regel innerhalb von 1–2 Arbeitstagen.',
     'footer.rights': 'Alle Rechte vorbehalten.'
   }
 };
