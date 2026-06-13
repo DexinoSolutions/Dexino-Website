@@ -91,6 +91,15 @@ function applyLanguage(lang) {
   });
   document.title = dict['meta.title'];
   localStorage.setItem('dexino-language', lang);
+
+  const url = new URL(window.location);
+  url.searchParams.set('lang', lang);
+  window.history.replaceState(
+    {},
+    '',
+    url
+  );
+  
   langToggle.textContent = lang === 'en' ? 'DE' : 'EN';
   langToggle.setAttribute('aria-label', lang === 'en' ? 'Switch to German' : 'Switch to English');
 }
