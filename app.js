@@ -95,8 +95,29 @@ function applyLanguage(lang) {
   langToggle.setAttribute('aria-label', lang === 'en' ? 'Switch to German' : 'Switch to English');
 }
 
-const savedLanguage = localStorage.getItem('dexino-language') || 'en';
-applyLanguage(savedLanguage);
+//const savedLanguage = localStorage.getItem('dexino-language') || 'en';
+//applyLanguage(savedLanguage);
+
+// Check URL first
+const urlParams = new URLSearchParams(window.location.search);
+const urlLanguage = urlParams.get('lang');
+
+// Then local storage
+const savedLanguage = localStorage.getItem('dexino-language');
+
+// Priority:
+// 1. URL parameter
+// 2. Local storage
+// 3. Default German
+
+const initialLanguage =
+    urlLanguage ||
+    savedLanguage ||
+    'de';
+
+applyLanguage(initialLanguage);
+
+
 
 langToggle.addEventListener('click', () => {
   const nextLanguage = document.documentElement.lang === 'en' ? 'de' : 'en';
