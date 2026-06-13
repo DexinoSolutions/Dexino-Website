@@ -122,7 +122,7 @@ const savedLanguage = localStorage.getItem('dexino-language');
 const initialLanguage =
     urlLanguage ||
     savedLanguage ||
-    'de';
+    'en';
 
 applyLanguage(initialLanguage);
 
