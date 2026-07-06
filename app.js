@@ -3,7 +3,7 @@ const links = document.querySelector('.nav-links');
 const year = document.querySelector('#year');
 const langToggle = document.querySelector('[data-lang-toggle]');
 
-year.textContent = new Date().getFullYear();
+if (year) year.textContent = new Date().getFullYear();
 
 const translations = {
   en: {
@@ -89,58 +89,43 @@ function applyLanguage(lang) {
     const key = el.getAttribute('data-i18n-content');
     if (dict[key]) el.setAttribute('content', dict[key]);
   });
-  document.title = dict['meta.title'];
+  if (document.querySelector('[data-i18n=\"meta.title\"]')) {
+    document.title = dict['meta.title'];
+  }
   localStorage.setItem('dexino-language', lang);
-
-  const url = new URL(window.location);
-  url.searchParams.set('lang', lang);
-  window.history.replaceState(
-    {},
-    '',
-    url
-  );
-  
-  langToggle.textContent = lang === 'en' ? 'DE' : 'EN';
-  langToggle.setAttribute('aria-label', lang === 'en' ? 'Switch to German' : 'Switch to English');
+  if (langToggle) {
+    langToggle.textContent = lang === 'en' ? 'DE' : 'EN';
+    langToggle.setAttribute('aria-label', lang === 'en' ? 'Switch to German' : 'Switch to English');
+  }
 }
 
-//const savedLanguage = localStorage.getItem('dexino-language') || 'en';
-//applyLanguage(savedLanguage);
-
-// Check URL first
+// Language priority:
+// 1. URL parameter, e.g. ?lang=de for a German-specific link
+// 2. User's last selected language in this browser
+// 3. English default
 const urlParams = new URLSearchParams(window.location.search);
 const urlLanguage = urlParams.get('lang');
-
-// Then local storage
 const savedLanguage = localStorage.getItem('dexino-language');
-
-// Priority:
-// 1. URL parameter
-// 2. Local storage
-// 3. Default German
-
-const initialLanguage =
-    urlLanguage ||
-    savedLanguage ||
-    'en';
-
+const initialLanguage = ['en', 'de'].includes(urlLanguage) ? urlLanguage : (savedLanguage || 'en');
 applyLanguage(initialLanguage);
 
-
-
-langToggle.addEventListener('click', () => {
-  const nextLanguage = document.documentElement.lang === 'en' ? 'de' : 'en';
-  applyLanguage(nextLanguage);
-});
-
-toggle.addEventListener('click', () => {
-  const isOpen = links.classList.toggle('open');
-  toggle.setAttribute('aria-expanded', String(isOpen));
-});
-
-links.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    links.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
+if (langToggle) {
+  langToggle.addEventListener('click', () => {
+    const nextLanguage = document.documentElement.lang === 'en' ? 'de' : 'en';
+    applyLanguage(nextLanguage);
   });
-});
+}
+
+if (toggle && links) {
+  toggle.addEventListener('click', () => {
+    const isOpen = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  links.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}

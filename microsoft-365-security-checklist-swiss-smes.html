@@ -1,42 +1,58 @@
-name: Azure Static Web Apps CI/CD
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
-
-jobs:
-  build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-    runs-on: ubuntu-latest
-    name: Build and Deploy Job
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-      - name: Build And Deploy
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          app_location: "/"
-          api_location: ""
-          output_location: ""
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          action: "close"
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A practical Microsoft 365 security checklist for Swiss SMEs covering MFA, admin accounts, mail security, Teams, SharePoint and backups." />
+  <title>Microsoft 365 Security Checklist for Swiss SMEs | Dexino</title>
+  <link rel="icon" href="assets/dexino-logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="index.html" aria-label="Dexino home">
+      <img src="assets/dexino-logo.png" alt="Dexino.com logo" />
+      <span>Dexino Cloud & AI Solutions</span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#approach">Approach</a>
+      <a href="index.html#clients">Clients</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact" class="nav-cta">Contact</a>
+      <button class="language-toggle" type="button" aria-label="Switch language" data-lang-toggle>DE</button>
+    </div>
+  </nav>
+</header>
+<main class="article">
+  <a class="back-link" href="blog.html">← Back to Blog</a>
+  <p class="eyebrow">Microsoft 365 Security</p>
+  <h1>Microsoft 365 Security Checklist for Swiss SMEs</h1>
+  <p class="article-meta">Dexino Insights · Microsoft 365 · Security · Swiss SMEs</p>
+  <p>Microsoft 365 is often the centre of daily work for small and medium-sized businesses: email, Teams, SharePoint, OneDrive, calendars and documents. That also makes it one of the most important areas to secure properly.</p>
+  <div class="article-callout"><strong>Goal:</strong> reduce avoidable risk by securing identities, administrator access, email protection, device access and recovery processes.</div>
+  <h2>1. Protect every account with MFA</h2>
+  <p>Multi-factor authentication should be enabled for all users, especially administrators. For smaller organisations, this is one of the highest-impact improvements because many attacks begin with stolen passwords.</p>
+  <h2>2. Separate administrator accounts</h2>
+  <p>Daily work accounts should not also be global administrator accounts. Use separate admin accounts, keep the number of privileged users low, and review permissions regularly.</p>
+  <h2>3. Review mail security</h2>
+  <p>Phishing remains a common entry point. Review anti-phishing protection, external sender warnings, safe links, attachment handling and mailbox forwarding rules.</p>
+  <h2>4. Secure Teams, SharePoint and OneDrive</h2>
+  <p>Many businesses unintentionally expose files through oversharing. Review guest access, anonymous links, sharing permissions and ownership of important sites.</p>
+  <h2>5. Create a recovery plan</h2>
+  <p>Microsoft 365 availability is not the same as business backup. Define what needs to be restored, who is responsible, and how quickly important data must be recovered.</p>
+  <h2>6. Document the environment</h2>
+  <p>A simple overview of users, groups, admin roles, domains, licenses and critical services helps enormously during support, audits and incident response.</p>
+  <h2>Practical next step</h2>
+  <p>Start with MFA, administrator roles and mail security. These areas usually create the fastest risk reduction for Swiss SMEs.</p>
+  <div class="article-cta"><h2>Need help reviewing Microsoft 365?</h2><p>Dexino Cloud & AI Solutions can help assess and improve your Microsoft 365 security setup.</p><p><a href="index.html#contact">Contact Dexino →</a></p></div>
+</main>
+<footer class="footer">
+  <img src="assets/dexino-logo.png" alt="Dexino logo" />
+  <p>© <span id="year"></span> Dexino Cloud & AI Solutions. All rights reserved. · <a href="blog.html">Blog</a></p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

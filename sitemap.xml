@@ -1,72 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Practical Dexino articles about Microsoft 365, Azure, IT security and AI for Swiss SMEs." />
-  <title>Dexino Blog | Microsoft Cloud, Security & AI Insights</title>
-  <link rel="icon" href="assets/dexino-logo.png" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="index.html#top" aria-label="Dexino home">
-        <img src="assets/dexino-logo.png" alt="Dexino.com logo" />
-        <span>Dexino Cloud & AI Solutions</span>
-      </a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-      <div class="nav-links">
-        <a href="index.html#services">Services</a>
-        <a href="index.html#approach">Approach</a>
-        <a href="index.html#clients">Clients</a>
-        <a href="blog.html">Blog</a>
-        <a href="index.html#contact" class="nav-cta">Contact</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="section blog-hero">
-      <div class="section-title">
-        <p class="eyebrow">Dexino Insights</p>
-        <h1>Microsoft Cloud, Security & AI insights for Swiss SMEs.</h1>
-        <p class="lead">Practical guidance on Microsoft 365, Azure, identity, IT security, cloud operations and careful AI adoption for small and medium-sized organisations in Switzerland.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="blog-list">
-        <article class="blog-card">
-          <div class="blog-meta"><span>Microsoft 365</span><span>Security</span><span>Swiss SMEs</span></div>
-          <h2>Microsoft 365 Security Checklist for Swiss SMEs</h2>
-          <p>A practical starter checklist for securing users, mailboxes, Teams, SharePoint and administrator accounts.</p>
-          <a class="blog-link" href="blog/microsoft-365-security-checklist-swiss-smes.html">Read article →</a>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-meta"><span>Azure</span><span>Backup</span><span>Continuity</span></div>
-          <h2>Why Azure Backup Matters for Small Businesses</h2>
-          <p>How backup, recovery planning and cloud governance help protect business continuity.</p>
-          <a class="blog-link" href="blog/azure-backup-for-swiss-smes.html">Read article →</a>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-meta"><span>AI</span><span>Data Privacy</span><span>Automation</span></div>
-          <h2>How AI Can Help SMEs Without Risking Sensitive Data</h2>
-          <p>A careful introduction to private AI assistants, document search and workflow automation.</p>
-          <a class="blog-link" href="blog/private-ai-for-swiss-smes.html">Read article →</a>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <img src="assets/dexino-logo.png" alt="Dexino logo" />
-    <p>© <span id="year"></span> Dexino Cloud & AI Solutions. All rights reserved.</p>
-    <p class="footer-links"><a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="mailto:info@dexino.com">info@dexino.com</a></p>
-  </footer>
-
-  <script src="app.js"></script>
-</body>
-</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.dexino.com/</loc></url>
+  <url><loc>https://www.dexino.com/blog.html</loc></url>
+  <url><loc>https://www.dexino.com/microsoft-365-security-checklist-swiss-smes.html</loc></url>
+  <url><loc>https://www.dexino.com/azure-backup-for-swiss-smes.html</loc></url>
+  <url><loc>https://www.dexino.com/private-ai-for-swiss-smes.html</loc></url>
+</urlset>
