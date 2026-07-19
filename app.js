@@ -39,7 +39,7 @@ const translations = {
     'contact.text': 'Send a message for an initial conversation about Microsoft 365, Azure, security or AI solutions for your organisation.',
     'contact.addressLabel': 'Address:', 'contact.emailLabel': 'Business email', 'contact.emailValue': 'Contact us by email', 'contact.websiteLabel': 'Website:',
     'contact.note': 'Initial consultations by email. Responses usually within 1–2 business days.',
-    'footer.rights': 'All rights reserved.', 'article.back': '← Back to Blog', 'article.cta.title': 'Need help reviewing Microsoft 365?', 'article.cta.text': 'Dexino Cloud & AI Solutions can help assess and improve your Microsoft 365 security setup.', 'article.cta.link': 'Contact Dexino →'
+    'footer.rights': 'All rights reserved.', 'article.back': '← Back to Blog', 'article.cta.title': 'Need help reviewing Microsoft 365?', 'article.cta.text': 'Dexino Cloud & AI Solutions can help assess and improve your Microsoft 365 security setup.', 'article.cta.link': 'Contact Dexino →', 'blog.meta.title': 'Dexino Blog | Microsoft Cloud, Security & AI Insights', 'blog.meta.description': 'Practical articles from Dexino Cloud & AI Solutions about Microsoft 365, Azure, IT security and AI for Swiss SMEs.', 'blog.hero.eyebrow': 'Dexino Insights', 'blog.hero.title': 'Microsoft Cloud, Security & AI articles for Swiss SMEs.', 'blog.hero.lead': 'Practical guidance from Dexino Cloud & AI Solutions on Microsoft 365, Azure, IT security, cloud operations and responsible AI adoption for small and medium-sized organisations in Switzerland.', 'blog.read.more': 'Read article →'
   },
   de: {
     'meta.title': 'Dexino Cloud & AI Solutions | Microsoft Cloud, Sicherheit & KI',
@@ -74,7 +74,7 @@ const translations = {
     'contact.text': 'Senden Sie eine Nachricht für ein erstes Gespräch über Microsoft 365, Azure, Sicherheit oder KI-Lösungen für Ihre Organisation.',
     'contact.addressLabel': 'Adresse:', 'contact.emailLabel': 'Geschäftliche Anfrage', 'contact.emailValue': 'E-Mail schreiben', 'contact.websiteLabel': 'Website:',
     'contact.note': 'Erstgespräche per E-Mail. Antworten in der Regel innerhalb von 1–2 Arbeitstagen.',
-    'footer.rights': 'Alle Rechte vorbehalten.', 'article.back': '← Zurück zum Blog', 'article.cta.title': 'Benötigen Sie Hilfe bei der Überprüfung von Microsoft 365?', 'article.cta.text': 'Dexino Cloud & AI Solutions unterstützt Sie bei der Bewertung und Optimierung Ihrer Microsoft 365 Sicherheitskonfiguration.', 'article.cta.link': 'Dexino kontaktieren →'
+    'footer.rights': 'Alle Rechte vorbehalten.', 'article.back': '← Zurück zum Blog', 'article.cta.title': 'Benötigen Sie Hilfe bei der Überprüfung von Microsoft 365?', 'article.cta.text': 'Dexino Cloud & AI Solutions unterstützt Sie bei der Bewertung und Optimierung Ihrer Microsoft 365 Sicherheitskonfiguration.', 'article.cta.link': 'Dexino kontaktieren →', 'blog.meta.title': 'Dexino Blog | Microsoft Cloud, Sicherheit & KI Einblicke', 'blog.meta.description': 'Praktische Artikel von Dexino Cloud & AI Solutions über Microsoft 365, Azure, IT-Sicherheit und KI für Schweizer KMU.', 'blog.hero.eyebrow': 'Dexino Einblicke', 'blog.hero.title': 'Microsoft Cloud-, Sicherheits- & KI-Artikel für Schweizer KMU.', 'blog.hero.lead': 'Praktische Anleitungen von Dexino Cloud & AI Solutions zu Microsoft 365, Azure, IT-Sicherheit, Cloud-Betrieb und verantwortungsvoller KI-Einführung für kleine und mittlere Organisationen in der Schweiz.', 'blog.read.more': 'Artikel lesen →'
   }
 };
 
