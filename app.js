@@ -39,7 +39,7 @@ const translations = {
     'contact.text': 'Send a message for an initial conversation about Microsoft 365, Azure, security or AI solutions for your organisation.',
     'contact.addressLabel': 'Address:', 'contact.emailLabel': 'Business email', 'contact.emailValue': 'Contact us by email', 'contact.websiteLabel': 'Website:',
     'contact.note': 'Initial consultations by email. Responses usually within 1–2 business days.',
-    'footer.rights': 'All rights reserved.'
+    'footer.rights': 'All rights reserved.', 'article.back': '← Back to Blog', 'article.cta.title': 'Need help reviewing Microsoft 365?', 'article.cta.text': 'Dexino Cloud & AI Solutions can help assess and improve your Microsoft 365 security setup.', 'article.cta.link': 'Contact Dexino →'
   },
   de: {
     'meta.title': 'Dexino Cloud & AI Solutions | Microsoft Cloud, Sicherheit & KI',
@@ -74,7 +74,7 @@ const translations = {
     'contact.text': 'Senden Sie eine Nachricht für ein erstes Gespräch über Microsoft 365, Azure, Sicherheit oder KI-Lösungen für Ihre Organisation.',
     'contact.addressLabel': 'Adresse:', 'contact.emailLabel': 'Geschäftliche Anfrage', 'contact.emailValue': 'E-Mail schreiben', 'contact.websiteLabel': 'Website:',
     'contact.note': 'Erstgespräche per E-Mail. Antworten in der Regel innerhalb von 1–2 Arbeitstagen.',
-    'footer.rights': 'Alle Rechte vorbehalten.'
+    'footer.rights': 'Alle Rechte vorbehalten.', 'article.back': '← Zurück zum Blog', 'article.cta.title': 'Benötigen Sie Hilfe bei der Überprüfung von Microsoft 365?', 'article.cta.text': 'Dexino Cloud & AI Solutions unterstützt Sie bei der Bewertung und Optimierung Ihrer Microsoft 365 Sicherheitskonfiguration.', 'article.cta.link': 'Dexino kontaktieren →'
   }
 };
 
