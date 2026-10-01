@@ -1,0 +1,493 @@
+bash <<'BASH'
+set -euo pipefail
+
+echo "======================================================================"
+echo " DEXINO.COM — CREATE DEXIFIT PRIVACY POLICY"
+echo "======================================================================"
+
+# Use current directory if this is already the Dexino website repo.
+if [ -f "$PWD/sitemap.xml" ] && [ -f "$PWD/styles.css" ]; then
+    REPO="$PWD"
+else
+    CANDIDATES=(
+        "$HOME/Dexino-Website"
+        "$HOME/AI-Projects/Dexino-Website"
+        "$HOME/AI-Projects/Dexino-AI-Lab-TEST/08-Projects/Dexino-Website"
+    )
+
+    REPO=""
+
+    for d in "${CANDIDATES[@]}"; do
+        if [ -d "$d" ] && [ -f "$d/sitemap.xml" ] && [ -f "$d/styles.css" ]; then
+            REPO="$d"
+            break
+        fi
+    done
+fi
+
+if [ -z "${REPO:-}" ]; then
+    echo "FAIL — Dexino website folder not found."
+    echo "Run this from the Dexino-Website repository."
+    exit 1
+fi
+
+cd "$REPO"
+
+FILE="privacy-dexifit.html"
+STAMP="$(date +%Y%m%d-%H%M%S)"
+
+if [ -f "$FILE" ]; then
+    cp -a "$FILE" "$FILE.backup-$STAMP"
+    echo "Backup created:"
+    echo "$FILE.backup-$STAMP"
+fi
+
+cat > "$FILE" <<'HTML'
+<!doctype html>
+
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta
+  name="description"
+  content="Privacy Policy for DexiFit, developed by Dexino Cloud & AI Solutions."
+/>
+
+<title>DexiFit Privacy Policy | Dexino</title>
+
+<link rel="canonical" href="https://www.dexino.com/privacy-dexifit.html" />
+<link rel="icon" href="assets/dexino-logo.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<header class="site-header">
+<nav class="nav" aria-label="Main navigation">
+
+<a class="brand" href="index.html" aria-label="Dexino home">
+  <img src="assets/dexino-logo.png" alt="Dexino.com logo" />
+  <span>Dexino Cloud &amp; AI Solutions</span>
+</a>
+
+<button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+☰
+</button>
+
+<div class="nav-links">
+  <a href="index.html#services">Services</a>
+  <a href="index.html#approach">Approach</a>
+  <a href="index.html#clients">Clients</a>
+  <a href="blog.html">Blog</a>
+  <a href="index.html#contact" class="nav-cta">Contact</a>
+</div>
+
+</nav>
+</header>
+
+
+<main class="article">
+
+<a class="back-link" href="index.html">← Back to Dexino</a>
+
+<p class="eyebrow">DexiFit</p>
+
+<h1>Privacy Policy</h1>
+
+<p class="article-meta">
+Dexino Cloud &amp; AI Solutions · Mobile Apps · Privacy
+</p>
+
+<p>
+This Privacy Policy explains how <strong>DexiFit</strong>,
+developed by <strong>Dexino Cloud &amp; AI Solutions</strong>,
+handles information when you use the application.
+</p>
+
+<div class="article-callout">
+<strong>Our approach:</strong>
+DexiFit is designed as a simple virtual workout counter.
+Its core repetition, rest, set and workout-counting functionality is
+performed primarily on the user's device. Advertising, consent
+management and Google Play services may process information as
+described below.
+</div>
+
+
+<h2>1. Purpose of DexiFit</h2>
+
+<p>
+DexiFit helps users configure and follow repetitive workout sessions
+using repetitions, rest periods, sets and configurable timing between
+repetitions.
+</p>
+
+<p>
+DexiFit may also use Android text-to-speech functionality to announce
+repetition numbers, rest countdowns and workout information.
+</p>
+
+<p>
+DexiFit does not require users to upload photographs, contacts,
+documents or private files to use its core workout-counter functions.
+</p>
+
+
+<h2>2. Locally stored application data</h2>
+
+<p>
+DexiFit may store information locally on the user's device including
+selected repetition, rest and set values, repetition timing,
+application preferences and completed-workout counts.
+</p>
+
+<p>
+This information is used to preserve the user's settings, operate the
+workout counter and determine when advertising may be eligible to
+appear.
+</p>
+
+<p>
+Clearing DexiFit's application data or uninstalling the application
+may remove locally stored preferences and workout-counter information.
+</p>
+
+
+<h2>3. Workout information</h2>
+
+<p>
+DexiFit is a workout counting and timing tool.
+</p>
+
+<p>
+DexiFit does not currently require users to create a Dexino health
+profile or upload medical records in order to use the application.
+</p>
+
+<p>
+DexiFit does not independently verify whether a repetition, set or
+exercise has physically been completed. Workout completion is recorded
+based on the operation of the application's workout counter.
+</p>
+
+
+<h2>4. Android text-to-speech</h2>
+
+<p>
+DexiFit may use Android text-to-speech services to provide spoken
+repetition numbers, countdown information and workout prompts.
+</p>
+
+<p>
+Text-to-speech availability, voice selection and behaviour may depend
+on the user's Android device and installed system speech services.
+</p>
+
+<p>
+DexiFit does not require microphone access merely to provide spoken
+workout announcements.
+</p>
+
+
+<h2>5. Advertising</h2>
+
+<p>
+The free version of DexiFit may display advertisements using
+Google Mobile Ads / Google AdMob.
+</p>
+
+<p>
+Under the current DexiFit advertising model, the first five completed
+workout sessions are designed to be free of full-screen interstitial
+advertising.
+</p>
+
+<p>
+Starting with the sixth completed workout session, DexiFit may display
+one full-screen advertisement after a completed workout.
+</p>
+
+<p>
+An advertisement may not appear on every eligible occasion because
+advertising availability can depend on network connectivity, inventory,
+user consent, region, device configuration and Google's advertising
+systems.
+</p>
+
+<p>
+Google advertising services may process information such as IP address,
+general device information, application interactions, diagnostic
+information, advertising identifiers where available, and information
+used for advertising, measurement, security and fraud prevention.
+</p>
+
+
+<h2>6. Consent and privacy choices</h2>
+
+<p>
+Where required by applicable privacy law or Google advertising
+requirements, DexiFit uses Google's consent-management technology to
+present privacy choices before certain advertising processing takes
+place.
+</p>
+
+<p>
+This may include users in the European Economic Area, United Kingdom,
+Switzerland and applicable US states.
+</p>
+
+<p>
+DexiFit may provide a Privacy Choices option that allows users to
+review applicable advertising privacy settings when those options are
+made available through Google's consent platform.
+</p>
+
+<p>
+The choices presented may vary depending on applicable law, region,
+device settings and Google's current requirements.
+</p>
+
+
+<h2>7. DexiFit Ad-Free</h2>
+
+<p>
+DexiFit may offer an optional one-time in-app purchase called
+<strong>DexiFit Ad-Free</strong>.
+</p>
+
+<p>
+The purpose of DexiFit Ad-Free is to permanently remove advertisements
+from DexiFit for the applicable Google Play purchasing account,
+subject to successful purchase verification.
+</p>
+
+<p>
+The intended Swiss launch price is CHF 1.99.
+The price displayed by Google Play at the time of purchase is the
+applicable transaction price and may vary by country, currency, taxes
+or Google Play pricing configuration.
+</p>
+
+<p>
+The Ad-Free purchase does not automatically provide additional workout
+content or future premium functionality unless such benefits are
+specifically stated in DexiFit or its Google Play listing.
+</p>
+
+
+<h2>8. Google Play Billing</h2>
+
+<p>
+DexiFit Ad-Free purchases are processed through Google Play Billing.
+</p>
+
+<p>
+Dexino does not directly receive or store users' complete payment-card
+details.
+</p>
+
+<p>
+Google Play handles payment processing and purchase-account information
+according to Google's systems, policies and the user's Google account.
+</p>
+
+<p>
+DexiFit may query Google Play for purchase information required to
+recognise or restore an Ad-Free entitlement.
+</p>
+
+<p>
+Google's privacy policy is available at
+<a
+  href="https://policies.google.com/privacy"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+Google Privacy Policy
+</a>.
+</p>
+
+
+<h2>9. Accounts</h2>
+
+<p>
+DexiFit does not currently require users to create a separate Dexino
+account to use its core workout-counter functionality.
+</p>
+
+<p>
+DexiFit Ad-Free purchases are associated with the user's Google Play
+account rather than a separate DexiFit account.
+</p>
+
+
+<h2>10. Third-party services</h2>
+
+<p>
+DexiFit may interact with third-party services including Google Play,
+Google Mobile Ads / AdMob, Google's User Messaging Platform, Android
+text-to-speech services and other Google or Android services required
+to operate, distribute or support the application.
+</p>
+
+<p>
+These third-party services may process information according to their
+own privacy policies, terms and technical requirements.
+</p>
+
+
+<h2>11. Data sharing and sale</h2>
+
+<p>
+Dexino does not sell users' personal information.
+</p>
+
+<p>
+Dexino does not sell locally stored DexiFit workout settings or
+workout-counter information.
+</p>
+
+<p>
+Information may nevertheless be processed by Google or other
+third-party services when those services are used as described in this
+Policy.
+</p>
+
+
+<h2>12. Data retention and deletion</h2>
+
+<p>
+Locally stored DexiFit data can generally be removed by clearing the
+application's data or uninstalling the application.
+</p>
+
+<p>
+Purchase information associated with Google Play and information
+processed by Google advertising services may be subject to Google's
+independent retention and deletion policies.
+</p>
+
+<p>
+Because DexiFit does not currently require a Dexino cloud account,
+there is no general DexiFit cloud profile that users must maintain.
+</p>
+
+
+<h2>13. Network access</h2>
+
+<p>
+DexiFit's core workout counter can perform substantial functionality
+locally.
+</p>
+
+<p>
+Network access may nevertheless be required for advertising, consent
+management, Google Play Billing, purchase verification and supported
+online platform services.
+</p>
+
+
+<h2>14. Data security</h2>
+
+<p>
+Dexino uses reasonable technical measures intended to reduce
+unnecessary collection, transmission and exposure of user information.
+</p>
+
+<p>
+No software system, electronic storage method or network transmission
+can be guaranteed to be completely secure.
+</p>
+
+<p>
+Users remain responsible for protecting access to their device and
+Google account.
+</p>
+
+
+<h2>15. Changes to this Privacy Policy</h2>
+
+<p>
+This Privacy Policy may be updated when DexiFit's functionality,
+advertising model, purchase system, third-party services, legal
+requirements or data practices change.
+</p>
+
+<p>
+The date below will be updated when material changes are made.
+</p>
+
+
+<h2>16. Contact</h2>
+
+<div class="article-callout">
+
+<strong>Dexino Cloud &amp; AI Solutions</strong><br />
+
+Surbgasse 5<br />
+8166 Niederweningen<br />
+Switzerland<br /><br />
+
+Email:
+<a href="mailto:info@dexino.com">info@dexino.com</a><br />
+
+Website:
+<a href="https://www.dexino.com">www.dexino.com</a>
+
+</div>
+
+
+<h2>Effective date</h2>
+
+<p>1 October 2026</p>
+
+<p><strong>Last updated:</strong> 1 October 2026</p>
+
+</main>
+
+
+<footer class="footer">
+
+<img src="assets/dexino-logo.png" alt="Dexino logo" />
+
+<p>
+© <span id="year"></span>
+Dexino Cloud &amp; AI Solutions.
+All rights reserved.
+·
+<a href="privacy-dexifit.html">Privacy</a>
+·
+<a href="terms-dexifit.html">Terms of Use</a>
+·
+<a href="blog.html">Blog</a>
+</p>
+
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
+HTML
+
+echo
+echo "Created:"
+echo "$REPO/$FILE"
+
+echo
+echo "Quick verification:"
+grep -E \
+    '<title>|Google AdMob|CHF 1.99|Google Play Billing|Effective date' \
+    "$FILE"
+
+echo
+echo "======================================================================"
+echo " PRIVACY PAGE COMPLETE"
+echo "======================================================================"
+echo
+echo "Expected URL after deployment:"
+echo "https://www.dexino.com/privacy-dexifit.html"
+BASH
