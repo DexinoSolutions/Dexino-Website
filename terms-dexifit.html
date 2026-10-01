@@ -1,0 +1,552 @@
+bash <<'BASH'
+set -euo pipefail
+
+echo "======================================================================"
+echo " DEXINO.COM — CREATE DEXIFIT TERMS OF USE"
+echo "======================================================================"
+
+if [ -f "$PWD/sitemap.xml" ] && [ -f "$PWD/styles.css" ]; then
+    REPO="$PWD"
+else
+    CANDIDATES=(
+        "$HOME/Dexino-Website"
+        "$HOME/AI-Projects/Dexino-Website"
+        "$HOME/AI-Projects/Dexino-AI-Lab-TEST/08-Projects/Dexino-Website"
+    )
+
+    REPO=""
+
+    for d in "${CANDIDATES[@]}"; do
+        if [ -d "$d" ] && [ -f "$d/sitemap.xml" ] && [ -f "$d/styles.css" ]; then
+            REPO="$d"
+            break
+        fi
+    done
+fi
+
+if [ -z "${REPO:-}" ]; then
+    echo "FAIL — Dexino website folder not found."
+    echo "Run this from the Dexino-Website repository."
+    exit 1
+fi
+
+cd "$REPO"
+
+FILE="terms-dexifit.html"
+STAMP="$(date +%Y%m%d-%H%M%S)"
+
+if [ -f "$FILE" ]; then
+    cp -a "$FILE" "$FILE.backup-$STAMP"
+    echo "Backup created:"
+    echo "$FILE.backup-$STAMP"
+fi
+
+cat > "$FILE" <<'HTML'
+<!doctype html>
+
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta
+  name="description"
+  content="Terms of Use for DexiFit, developed by Dexino Cloud & AI Solutions."
+/>
+
+<title>DexiFit Terms of Use | Dexino</title>
+
+<link rel="canonical" href="https://www.dexino.com/terms-dexifit.html" />
+<link rel="icon" href="assets/dexino-logo.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<header class="site-header">
+<nav class="nav" aria-label="Main navigation">
+
+<a class="brand" href="index.html" aria-label="Dexino home">
+  <img src="assets/dexino-logo.png" alt="Dexino.com logo" />
+  <span>Dexino Cloud &amp; AI Solutions</span>
+</a>
+
+<button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+☰
+</button>
+
+<div class="nav-links">
+  <a href="index.html#services">Services</a>
+  <a href="index.html#approach">Approach</a>
+  <a href="index.html#clients">Clients</a>
+  <a href="blog.html">Blog</a>
+  <a href="index.html#contact" class="nav-cta">Contact</a>
+</div>
+
+</nav>
+</header>
+
+
+<main class="article">
+
+<a class="back-link" href="index.html">← Back to Dexino</a>
+
+<p class="eyebrow">DexiFit</p>
+
+<h1>Terms of Use</h1>
+
+<p class="article-meta">
+Dexino Cloud &amp; AI Solutions · Mobile Apps · Terms
+</p>
+
+<p>
+These Terms of Use govern your use of
+<strong>DexiFit</strong>, developed by
+<strong>Dexino Cloud &amp; AI Solutions</strong>.
+</p>
+
+<div class="article-callout">
+<strong>Use DexiFit safely:</strong>
+DexiFit is a repetition, rest, set and workout-counting tool.
+It does not evaluate exercise technique, physical readiness, injury
+risk or medical suitability for a particular exercise.
+</div>
+
+
+<h2>1. Acceptance of these Terms</h2>
+
+<p>
+By downloading, installing or using DexiFit, you agree to these
+Terms of Use.
+</p>
+
+<p>
+If you do not agree with these Terms, you should not use the
+application.
+</p>
+
+
+<h2>2. Purpose of DexiFit</h2>
+
+<p>
+DexiFit is designed to provide a simple virtual workout counter for
+repetitive exercises.
+</p>
+
+<p>
+Users may configure repetition counts, rest periods, sets and timing
+between repetitions.
+</p>
+
+<p>
+DexiFit may provide spoken repetition numbers and countdown
+information using supported Android text-to-speech services.
+</p>
+
+
+<h2>3. User responsibility and exercise safety</h2>
+
+<p>
+Users remain responsible for selecting exercises, repetition levels,
+rest periods, resistance, intensity and workout duration appropriate
+to their own circumstances.
+</p>
+
+<p>
+Users should exercise appropriate judgement, follow safe exercise
+practices and stop exercising if they experience concerning pain,
+dizziness, breathing difficulty or other symptoms requiring attention.
+</p>
+
+<p>
+Where appropriate, users should seek advice from a qualified health,
+fitness or medical professional before beginning or changing an
+exercise programme.
+</p>
+
+
+<h2>4. No medical or professional advice</h2>
+
+<p>
+DexiFit does not diagnose medical conditions, evaluate physical
+fitness, prescribe exercise programmes or provide medical treatment.
+</p>
+
+<p>
+The counting and timing functionality provided by DexiFit is not a
+substitute for professional medical, physiotherapy, rehabilitation,
+fitness or other specialist advice.
+</p>
+
+
+<h2>5. Android and device services</h2>
+
+<p>
+Certain DexiFit functions may rely on Android system services including
+text-to-speech functionality.
+</p>
+
+<p>
+Availability, voice quality, timing and behaviour may vary between
+devices, Android versions, installed speech engines and system
+settings.
+</p>
+
+
+<h2>6. Advertising</h2>
+
+<p>
+The free version of DexiFit may display advertisements using
+Google Mobile Ads / Google AdMob.
+</p>
+
+<p>
+Under the current DexiFit advertising model, the first five completed
+workout sessions are intended to be free of full-screen interstitial
+advertising.
+</p>
+
+<p>
+Starting with the sixth completed workout session, DexiFit may show
+one full-screen advertisement after a completed workout.
+</p>
+
+<p>
+An advertisement may not appear on every eligible occasion because
+availability depends on network connectivity, advertising inventory,
+user consent, region, device configuration and the advertising
+provider's systems.
+</p>
+
+<p>
+Dexino may reasonably modify advertising format or frequency in future
+versions subject to applicable law, platform policies and updated
+disclosures where appropriate.
+</p>
+
+
+<h2>7. DexiFit Ad-Free</h2>
+
+<p>
+DexiFit may offer an optional one-time in-app purchase called
+<strong>DexiFit Ad-Free</strong>.
+</p>
+
+<p>
+The intended benefit of DexiFit Ad-Free is permanent removal of
+advertisements from DexiFit for the applicable Google Play purchasing
+account, subject to successful purchase verification.
+</p>
+
+<p>
+The intended Swiss launch price is CHF 1.99.
+The price shown by Google Play at the time of purchase is the
+applicable transaction price.
+</p>
+
+<p>
+Prices may vary according to country, currency, taxes and Google Play
+pricing rules.
+</p>
+
+<p>
+Unless expressly stated otherwise, DexiFit Ad-Free does not guarantee
+additional workout programmes, coaching, exclusive content or unrelated
+future premium functionality.
+</p>
+
+
+<h2>8. Google Play purchases</h2>
+
+<p>
+DexiFit Ad-Free purchases are processed through Google Play and are
+associated with the user's Google Play account according to Google's
+purchasing systems and policies.
+</p>
+
+<p>
+Dexino does not directly process or store users' complete payment-card
+information.
+</p>
+
+<p>
+Recognition or restoration of a previous Ad-Free purchase may depend
+on the Google account used for the original transaction and the
+availability of Google Play services.
+</p>
+
+<p>
+Refunds and purchase disputes are handled according to Google Play
+policies, applicable consumer law and, where appropriate, Dexino's
+responsibilities as developer.
+</p>
+
+
+<h2>9. Privacy and consent</h2>
+
+<p>
+DexiFit may use Google advertising and consent-management services.
+</p>
+
+<p>
+Users may be presented with privacy or consent choices depending on
+their location, applicable law and Google's requirements.
+</p>
+
+<p>
+Further information is provided in the
+<a href="privacy-dexifit.html">DexiFit Privacy Policy</a>.
+</p>
+
+
+<h2>10. Third-party services</h2>
+
+<p>
+DexiFit may rely on third-party services including Google Play,
+Google Mobile Ads / AdMob, Google's User Messaging Platform,
+Android text-to-speech services and other Android or Google services.
+</p>
+
+<p>
+Third-party services are governed by their own terms, availability,
+technical requirements and privacy practices.
+</p>
+
+<p>
+Dexino is not responsible for interruptions, restrictions or changes
+independently caused by those third-party services.
+</p>
+
+
+<h2>11. Locally stored information</h2>
+
+<p>
+DexiFit may store workout-counter values, preferences,
+completed-workout counts and other application state locally on the
+user's device.
+</p>
+
+<p>
+Locally stored information may be lost if application data is cleared,
+the application is uninstalled or the device is lost, reset, damaged
+or replaced.
+</p>
+
+
+<h2>12. Acceptable use</h2>
+
+<p>
+Users must not use DexiFit:
+</p>
+
+<ul>
+
+<li>
+for unlawful, fraudulent or intentionally abusive purposes;
+</li>
+
+<li>
+to attempt to compromise the security or integrity of DexiFit or its
+supporting services;
+</li>
+
+<li>
+to interfere unlawfully with advertising, purchase verification or
+application security mechanisms;
+</li>
+
+<li>
+to manipulate Google Play purchases or advertising systems
+fraudulently;
+</li>
+
+<li>
+to impersonate Dexino or falsely represent DexiFit as providing
+professional medical or clinical advice.
+</li>
+
+</ul>
+
+
+<h2>13. Application availability and changes</h2>
+
+<p>
+Dexino may update, modify, add, remove or discontinue DexiFit features
+where reasonably necessary for technical, legal, security, commercial
+or product-development reasons.
+</p>
+
+<p>
+Dexino does not guarantee that every feature will remain permanently
+available or operate identically on every Android device or Android
+version.
+</p>
+
+
+<h2>14. Intellectual property</h2>
+
+<p>
+DexiFit's software, application interface, branding, original graphics,
+workout-counter design and related Dexino materials are owned by or
+licensed to Dexino Cloud &amp; AI Solutions and are protected by
+applicable intellectual-property laws.
+</p>
+
+<p>
+These Terms do not transfer ownership of DexiFit or Dexino
+intellectual property to users.
+</p>
+
+
+<h2>15. Disclaimer of warranties</h2>
+
+<p>
+To the extent permitted by applicable law, DexiFit is provided on an
+"as available" basis.
+</p>
+
+<p>
+Dexino does not guarantee uninterrupted operation, availability of
+every advertising or platform service, compatibility with every
+device, perfect timing accuracy or completely error-free operation.
+</p>
+
+<p>
+Nothing in these Terms excludes warranties, rights or remedies that
+cannot lawfully be excluded under applicable consumer-protection law.
+</p>
+
+
+<h2>16. Limitation of liability</h2>
+
+<p>
+To the extent permitted by applicable law, users remain responsible
+for their own exercise choices and physical activity.
+</p>
+
+<p>
+Dexino is not responsible for indirect or consequential loss arising
+solely from the use or inability to use DexiFit or third-party
+services.
+</p>
+
+<p>
+Nothing in these Terms limits liability where such limitation would
+be prohibited by applicable law.
+</p>
+
+
+<h2>17. Privacy</h2>
+
+<p>
+Information about DexiFit's handling of locally stored information,
+advertising, consent, third-party services and Google Play purchases
+is available in the
+<a href="privacy-dexifit.html">DexiFit Privacy Policy</a>.
+</p>
+
+
+<h2>18. Changes to these Terms</h2>
+
+<p>
+These Terms may be updated when DexiFit's functionality, advertising,
+purchase model, third-party services or legal requirements change.
+</p>
+
+<p>
+The current version will be published on this page and identified by
+the "Last updated" date below.
+</p>
+
+
+<h2>19. Governing law</h2>
+
+<p>
+To the extent permitted by applicable law, these Terms are governed by
+the laws of Switzerland.
+</p>
+
+<p>
+Mandatory consumer-protection rights applicable in a user's country
+or place of residence remain unaffected.
+</p>
+
+<p>
+Where legally permitted, disputes relating to DexiFit or these Terms
+are subject to the competent courts at the registered place of
+business of Dexino Cloud &amp; AI Solutions, unless mandatory law
+provides otherwise.
+</p>
+
+
+<h2>20. Contact</h2>
+
+<div class="article-callout">
+
+<strong>Dexino Cloud &amp; AI Solutions</strong><br />
+
+Surbgasse 5<br />
+8166 Niederweningen<br />
+Switzerland<br /><br />
+
+Email:
+<a href="mailto:info@dexino.com">info@dexino.com</a><br />
+
+Website:
+<a href="https://www.dexino.com">www.dexino.com</a>
+
+</div>
+
+
+<h2>Effective date</h2>
+
+<p>1 October 2026</p>
+
+<p><strong>Last updated:</strong> 1 October 2026</p>
+
+</main>
+
+
+<footer class="footer">
+
+<img src="assets/dexino-logo.png" alt="Dexino logo" />
+
+<p>
+© <span id="year"></span>
+Dexino Cloud &amp; AI Solutions.
+All rights reserved.
+·
+<a href="privacy-dexifit.html">Privacy</a>
+·
+<a href="terms-dexifit.html">Terms of Use</a>
+·
+<a href="blog.html">Blog</a>
+</p>
+
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
+HTML
+
+echo
+echo "Created:"
+echo "$REPO/$FILE"
+
+echo
+echo "Quick verification:"
+grep -E \
+    '<title>|Google AdMob|CHF 1.99|Google Play purchases|Effective date' \
+    "$FILE"
+
+echo
+echo "======================================================================"
+echo " TERMS PAGE COMPLETE"
+echo "======================================================================"
+echo
+echo "Expected URL after deployment:"
+echo "https://www.dexino.com/terms-dexifit.html"
+BASH
